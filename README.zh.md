@@ -1,5 +1,7 @@
 # TDesign Vue Next Skill
 
+简体中文 | [English](./README.md)
+
 > **灵感来源于 [antd-skill](https://github.com/ant-design/antd-skill)** - Ant Design 的同类 Skill 项目。
 
 为 [TDesign Vue Next](https://github.com/Tencent/tdesign-vue-next) 组件库开发提供 AI 驱动的指导。

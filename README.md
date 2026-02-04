@@ -1,5 +1,7 @@
 # TDesign Vue Next Skill
 
+[简体中文](./README.zh.md) | English
+
 > **Inspired by [antd-skill](https://github.com/ant-design/antd-skill)** - A similar skill project for Ant Design.
 
 AI-powered guidance for [TDesign Vue Next](https://github.com/Tencent/tdesign-vue-next) component library development.
