@@ -1,121 +1,121 @@
-# AGENTS.md - TDesign Skill 开发指南
+# AGENTS.md - TDesign Skill Development Guide
 
-本文档为 AI Agent 和开发者提供使用 TDesign Vue Next Skill 的指导。
+This document provides guidance for AI Agents and developers on using TDesign Vue Next Skill.
 
-## Skill 结构
+## Skill Structure
 
 ```
 tdesign-skill/
-├── AGENTS.md                           # 本文档
-├── LICENSE                             # MIT 许可证
-├── README.md                           # 英文说明
-├── README.zh.md                        # 中文说明
+├── AGENTS.md                           # This document
+├── LICENSE                             # MIT License
+├── README.md                           # English documentation
+├── README.zh.md                        # Chinese documentation
 └── skills/
     └── tdesign-vue-next/
-        ├── LICENSE                     # Skill 许可证
-        ├── SKILL.md                    # 主 Skill 文件（SPO 格式）
-        └── references/                 # 复杂场景参考文档
-            ├── tdesign-v1.md           # 版本参考
-            ├── form-advanced.md        # 表单高级用法
-            ├── table-advanced.md       # 表格高级用法
-            ├── select-advanced.md      # 选择器高级用法
-            ├── upload-advanced.md      # 上传高级用法
-            ├── tree-advanced.md        # 树组件高级用法
-            ├── cascader-advanced.md    # 级联选择高级用法
-            ├── dialog-drawer-advanced.md # 弹窗抽屉高级用法
-            ├── theming-advanced.md     # 主题定制
-            ├── dark-mode.md            # 暗黑模式
-            └── chat-advanced.md        # AI 对话组件
+        ├── LICENSE                     # Skill license
+        ├── SKILL.md                    # Main skill file (SPO format)
+        └── references/                 # Advanced scenario references
+            ├── tdesign-v1.md           # Version reference
+            ├── form-advanced.md        # Form advanced usage
+            ├── table-advanced.md       # Table advanced usage
+            ├── select-advanced.md      # Select advanced usage
+            ├── upload-advanced.md      # Upload advanced usage
+            ├── tree-advanced.md        # Tree advanced usage
+            ├── cascader-advanced.md    # Cascader advanced usage
+            ├── dialog-drawer-advanced.md # Dialog & Drawer advanced usage
+            ├── theming-advanced.md     # Theme customization
+            ├── dark-mode.md            # Dark mode
+            └── chat-advanced.md        # AI Chat component
 ```
 
-## 如何使用此 Skill
+## How to Use This Skill
 
-### 对于 AI Agent
+### For AI Agents
 
-1. **先阅读 SKILL.md**：了解 Scope（适用范围）、Process（处理流程）和 Output（输出规范）
+1. **Read SKILL.md first**: Understand the Scope, Process, and Output specifications
 
-2. **识别复杂场景**：当遇到以下情况时，查阅对应的 Reference 文档：
-   - 动态表单、跨字段联动 → `form-advanced.md`
-   - 服务端分页、虚拟滚动 → `table-advanced.md`
-   - 远程搜索、大数据量选择 → `select-advanced.md`
-   - 受控上传、自定义请求 → `upload-advanced.md`
-   - 异步加载树节点 → `tree-advanced.md`
-   - 异步级联加载 → `cascader-advanced.md`
-   - 嵌套弹窗、命令式调用 → `dialog-drawer-advanced.md`
-   - 深度主题定制 → `theming-advanced.md`
-   - 暗黑模式切换 → `dark-mode.md`
-   - AI 对话界面 → `chat-advanced.md`
+2. **Identify complex scenarios**: Consult the corresponding Reference documents when encountering:
+   - Dynamic forms, cross-field validation → `form-advanced.md`
+   - Server-side pagination, virtual scrolling → `table-advanced.md`
+   - Remote search, large dataset selection → `select-advanced.md`
+   - Controlled upload, custom requests → `upload-advanced.md`
+   - Async tree node loading → `tree-advanced.md`
+   - Async cascader loading → `cascader-advanced.md`
+   - Nested dialogs, imperative calls → `dialog-drawer-advanced.md`
+   - Deep theme customization → `theming-advanced.md`
+   - Dark mode toggle → `dark-mode.md`
+   - AI chat interface → `chat-advanced.md`
 
-3. **遵循输出规范**：
-   - 使用 TypeScript + `<script setup>` 语法
-   - 提供可直接运行的代码
-   - 包含必要的 import 语句
-   - 添加性能和可访问性提示
+3. **Follow output specifications**:
+   - Use TypeScript + `<script setup>` syntax
+   - Provide directly runnable code
+   - Include necessary import statements
+   - Add performance and accessibility tips
 
-### 对于开发者
+### For Developers
 
-1. **安装 Skill**（如果支持 skills CLI）：
+1. **Install Skill** (if skills CLI is supported):
 
    ```bash
    npx skills add tdesign-skill
    ```
 
-2. **手动使用**：
-   - 将此 Skill 添加到你的 AI 工具的上下文中
-   - 或者直接阅读文档获取最佳实践
+2. **Manual usage**:
+   - Add this Skill to your AI tool's context
+   - Or read the documentation directly for best practices
 
-## Skill 设计原则
+## Skill Design Principles
 
-### SPO 格式
+### SPO Format
 
-每个 Skill 遵循 **S**cope-**P**rocess-**O**utput 格式：
+Each Skill follows the **S**cope-**P**rocess-**O**utput format:
 
-- **Scope（范围）**：定义适用场景和边界
-- **Process（流程）**：提供决策树和处理步骤
-- **Output（输出）**：规范输出格式和检查清单
+- **Scope**: Defines applicable scenarios and boundaries
+- **Process**: Provides decision trees and processing steps
+- **Output**: Specifies output format and checklists
 
-### Reference 文档格式
+### Reference Document Format
 
-每个 Reference 文档包含：
+Each Reference document contains:
 
-1. **适用场景边界**：何时应该查阅此文档
-2. **推荐模式**：最佳实践（1-2 种）
-3. **必须避免的反模式**：常见错误
-4. **常见实践**：详细的代码示例
-5. **常见问题与建议**：FAQ
-6. **最小示例**：可运行的最小代码
-7. **与主 Skill 的回跳说明**：何时返回主 Skill
-8. **参考文档**：官方文档链接
+1. **Applicable scenario boundaries**: When to consult this document
+2. **Recommended patterns**: Best practices (1-2 types)
+3. **Anti-patterns to avoid**: Common mistakes
+4. **Common practices**: Detailed code examples
+5. **FAQ and suggestions**: Frequently asked questions
+6. **Minimal examples**: Runnable minimal code
+7. **Return to main Skill**: When to return to the main Skill
+8. **Reference documentation**: Official documentation links
 
-## 贡献指南
+## Contributing Guide
 
-### 添加新的 Reference
+### Adding New References
 
-1. 在 `references/` 目录下创建 Markdown 文件
-2. 遵循上述 Reference 文档格式
-3. 在 `SKILL.md` 的 Complex triggers 和 Reference index 中添加索引
-4. 确保示例代码可以直接运行
+1. Create a Markdown file in the `references/` directory
+2. Follow the Reference document format above
+3. Add an index in SKILL.md's Complex triggers and Reference index
+4. Ensure example code can be run directly
 
-### 更新现有文档
+### Updating Existing Documents
 
-1. 确保与 TDesign Vue Next 最新版本兼容
-2. 添加新的 API 和最佳实践
-3. 移除已废弃的内容
+1. Ensure compatibility with the latest TDesign Vue Next version
+2. Add new APIs and best practices
+3. Remove deprecated content
 
-### 代码示例要求
+### Code Example Requirements
 
-- 使用 TypeScript
-- 使用 `<script setup>` 语法
-- 包含完整的 import 语句
-- 添加必要的类型注解
-- 确保可以直接复制运行
+- Use TypeScript
+- Use `<script setup>` syntax
+- Include complete import statements
+- Add necessary type annotations
+- Ensure code can be copied and run directly
 
-## 版本兼容性
+## Version Compatibility
 
-- **TDesign Vue Next**：1.x
-- **Vue**：3.3+
-- **TypeScript**：5.x 推荐
+- **TDesign Vue Next**: 1.x
+- **Vue**: 3.3+
+- **TypeScript**: 5.x recommended
 
-## 许可证
+## License
 
 MIT License
